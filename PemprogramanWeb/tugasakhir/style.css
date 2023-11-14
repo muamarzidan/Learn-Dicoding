@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&family=Quicksand&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +8,11 @@
 
 a {
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
+}
+
+p, h2, h1, ul, li {
+    color: #ffffff;
 }
 
 body {
@@ -14,19 +20,20 @@ body {
     background-color: #ffffff;
 }
 
+
+
 header {
     width: 100%;
-    height: 90px;
-    border: 1px solid #000000;
+    height: 80px;
 }
 
 nav {
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-color: #000000;
 }
 
 nav ul {
@@ -38,16 +45,179 @@ nav ul {
     list-style: none;
 }
 
-nav ul li {
-    margin: 0 20px;
+nav ul li a{
+    font-size: 1.3rem;
 }
 
-nav ul li a{
-    font-size: 1.5rem;
-}
+
 
 main {
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
+    background-image: linear-gradient(to top, #ffffff, #d0d0d0, #a3a3a3, #787878, #505050, #3d3d3d, #2a2a2a, #191919, #151515, #0f0f0f, #080808, #000000);
 }
+
+main #content {
+    width: 80%;
+    max-width: 80%;
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main #home h2, main #home p{
+    text-align: center;
+}
+
+#about {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about img {
+    width: 100%;
+    height: 40%;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+#about .about-description {
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+aside {
+    width: 20%;
+    max-width: 20%;
+    height: auto;
+}
+
+aside h3{
+    text-align: center;
+}
+
+aside .content {
+    width: 100%;
+    height: auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+aside .content  img {
+    width: 100%;
+    height: 50%;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+aside .content  ul {
+    list-style: none;
+}
+
+aside .content  ul li {
+    padding: 10px 0;
+}
+
+aside .connect {
+    width: 100%;
+    height: auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+aside .connect  ul {
+    list-style: none;
+}
+
+aside .connect ul #instagram {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right bottom, #405de6, #854fd5, #ac40bf, #c731a6, #d7298d, #e5317c, #ee3f6b, #f2505c, #fa6852, #fe804a, #ff9845, #fcaf45);
+    border-radius: 5px;
+}
+
+aside .connect ul #github {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right bottom, #000000, #2b2b2b, #525252, #7c7c7c, #aaaaaa, #aaaaaa, #aaaaaa, #aaaaaa, #7c7c7c, #525252, #2b2b2b, #000000);
+    border-radius: 5px;
+}
+
+aside .connect ul #linkedin {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right bottom, #0a66c2, #427ecc, #6695d5, #88adde, #aac5e6, #aac5e6, #aac5e6, #aac5e6, #88adde, #6695d5, #427ecc, #0a66c2);
+    border-radius: 5px;
+}
+
+aside .connect ul li {
+    padding: 10px 0;
+    margin: 15px 0;
+}
+
+
+
+footer {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+}
+
+footer .footer-content {
+    width: 100%;
+    height: auto;;
+}
+
+footer ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
