@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -11,13 +12,10 @@ a {
     color: #ffffff;
 }
 
-p, h2, h1, ul, li {
-    color: #ffffff;
-}
-
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #ffffff;
+
 }
 
 
@@ -78,7 +76,12 @@ main #content {
     align-items: center;
 }
 
-main #home h2, main #home p{
+main #home h1{
+    font-size: 3rem;
+}
+
+main #home h1, main #home p{
+    color: #ffffff;
     text-align: center;
 }
 
@@ -91,9 +94,15 @@ main #home h2, main #home p{
     align-items: center;
 }
 
-#about img {
+#about h2 {
+    color: #ffffff;
+    text-align: center;
+}
+
+main #about img {
     width: 100%;
     height: 40%;
+    margin-top: 20px;
     border-radius: 10px;
     object-fit: cover;
     object-position: center;
@@ -103,13 +112,18 @@ main #home h2, main #home p{
     -o-border-radius: 10px;
 }
 
-#about .about-description {
+main #about .about-description {
     padding-top: 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#about .about-description p {
+    color: #000000;
+    text-align: center;
 }
 
 
@@ -121,6 +135,7 @@ aside {
 }
 
 aside h3{
+    color: #ffffff;
     text-align: center;
 }
 
@@ -135,6 +150,7 @@ aside .content {
 aside .content  img {
     width: 100%;
     height: 50%;
+    margin-top: 10px;
     border-radius: 5px;
     object-fit: cover;
     object-position: center;
@@ -149,52 +165,57 @@ aside .content  ul {
 }
 
 aside .content  ul li {
+    color: #ffffff;
     padding: 10px 0;
 }
 
 aside .connect {
     width: 100%;
     height: auto;
+    margin-top: 20px;
     padding: 0 20px;
     display: flex;
     flex-direction: column;
 }
 
-aside .connect  ul {
+aside .connect ul {
     list-style: none;
 }
 
-aside .connect ul #instagram {
+aside .connect ul li {
     width: 100%;
-    height: 50%;
+    height: 50px;
     display: flex;
     justify-content: center;
-    background-image: linear-gradient(to right bottom, #405de6, #854fd5, #ac40bf, #c731a6, #d7298d, #e5317c, #ee3f6b, #f2505c, #fa6852, #fe804a, #ff9845, #fcaf45);
+    align-items: center;
     border-radius: 5px;
+    padding: 10px 0;
+    margin: 15px 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transition: background-color 0.5s ease-in;
+    /*Mengubahdurasitransisimenjadi0.5detik*/-webkit-transition: background-color 0.5s ease-in;
+    -moz-transition: background-color 0.5s ease-in;
+    -ms-transition: background-color 0.5s ease-in;
+    -o-transition: background-color 0.5s ease-in;
+    -webkit-transition: background-color 0.5s ease-in;
+}
+
+aside .connect ul #instagram {
+    background: linear-gradient(to right bottom, #405de6, #854fd5, #ac40bf, #c731a6, #d7298d, #e5317c, #ee3f6b, #f2505c, #fa6852, #fe804a, #ff9845, #fcaf45);
 }
 
 aside .connect ul #github {
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    background-image: linear-gradient(to right bottom, #000000, #2b2b2b, #525252, #7c7c7c, #aaaaaa, #aaaaaa, #aaaaaa, #aaaaaa, #7c7c7c, #525252, #2b2b2b, #000000);
-    border-radius: 5px;
+    background: linear-gradient(to right bottom, #000000, #2b2b2b, #525252, #7c7c7c, #aaaaaa, #aaaaaa, #aaaaaa, #aaaaaa, #7c7c7c, #525252, #2b2b2b, #000000);
 }
 
 aside .connect ul #linkedin {
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    background-image: linear-gradient(to right bottom, #0a66c2, #427ecc, #6695d5, #88adde, #aac5e6, #aac5e6, #aac5e6, #aac5e6, #88adde, #6695d5, #427ecc, #0a66c2);
-    border-radius: 5px;
+    background: linear-gradient(to right bottom, #0a66c2, #427ecc, #6695d5, #73a1dd, #9dbce2, #aac5e6, #aac5e6, #8bb2e1, #79a5dd, #6695d5, #427ecc, #0a66c2);
 }
 
-aside .connect ul li {
-    padding: 10px 0;
-    margin: 15px 0;
-}
+
 
 
 
@@ -207,12 +228,12 @@ footer {
     background-color: #000000;
 }
 
-footer .footer-content {
+.footer-content {
     width: 100%;
-    height: auto;;
+    height: auto;
 }
 
-footer ul {
+.footer-content ul {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -220,4 +241,102 @@ footer ul {
     align-items: center;
     list-style: none;
 }
+
+.footer-content ul li {
+    color: #000000;
+    transition: color 0.5s ease;
+}
+
+.footer-content ul li.active {
+    color: #ffffff;
+}
+
+
+
+@media screen and (max-width: 992px) {
+    main #content {
+        width: 70%;
+        max-width: 70%;
+    }
+
+    aside {
+        width: 30%;
+        max-width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column-reverse;
+    }
+
+    main #content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #about h2, #about .about-description p {
+        color: #ffffff;
+    }
+
+    aside {
+        width: 100%;
+        max-width: 100%;
+        order: -1;
+        margin-top: 20px;
+    }
+
+    aside h3{
+        font-size: 1.5rem;
+    }
+
+    aside .content  ul li {
+        color: #000000;
+    }
+    
+    aside .connect {
+        width: 100%;
+        height: auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    aside .connect ul #instagram, aside .connect ul #github, aside .connect ul #linkedin {
+        height: 60px;
+    }
+        
+    aside .connect ul li {
+        padding: 10px 0;
+        margin: 15px 0;
+    }
+
+    aside .connect h3{
+        color: #000000;
+    }
+}
+
+@media (max-width: 576px) {
+    aside .connect ul #instagram, aside .connect ul #github, aside .connect ul #linkedin {
+        height: 50px;
+    }
+}
+
+@media (max-width: 478px) {
+    main #about img {
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+    }
+
+    #about .about-description p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
 
