@@ -1,48 +1,48 @@
-class TypedTeks {
-    constructor(Compo, Bolbal, Times) {
-        this.Bolbal = Bolbal;
-        this.Compo = Compo;
-        this.Start = 0;
-        this.Times = parseInt(Times, 10) || 2000;
-        this.textLoop = '';
-        this.Deleted = false;
+class TypedText {
+    constructor(element, phrases, periode) {
+        this.element = element;
+        this.phrases = phrases;
+
+        this.periode = parseInt(periode, 100) || 3000;
+
+        this.currentText = '';
+        this.currentIndex = 0;
+        this.isDeleting = false;
         this.tick();
     }
 
     tick() {
-        const i = this.Start % this.Bolbal.length;
-        const fullText = this.Bolbal[i];
-
-        if (this.Deleted) {
-            this.textLoop = fullText.substring(0, this.textLoop.length - 1);
+        const fullText = this.phrases[this.currentIndex];
+        if (this.isDeleting) {
+            this.currentText = fullText.substring(0, this.currentText.length - 1);
         } else {
-            this.textLoop = fullText.substring(0, this.textLoop.length + 1);
+            this.currentText = fullText.substring(0, this.currentText.length + 1);
         }
 
-        this.Compo.innerHTML = `<span class="wrap">${this.textLoop}</span>`;
+        this.element.innerHTML = `<span class="wrap">${this.currentText}</span>`;
 
-        const delta = this.Deleted ? 150 : 100 - Math.random() * 100;
+        let delta = this.isDeleting ? 150 : 200 - Math.random() * 200;
 
-        if (!this.Deleted && this.textLoop === fullText) {
-            this.Deleted = true;
-            return setTimeout(() => this.tick(), this.Times);
-        } else if (this.Deleted && this.textLoop === '') {
-            this.Deleted = false;
-            this.Start++;
-            return setTimeout(() => this.tick(), 400);
+        if (!this.isDeleting && this.currentText === fullText) {
+            this.isDeleting = true;
+            delta = this.periode;
+        } else if (this.isDeleting && this.currentText === '') {
+            this.isDeleting = false;
+            this.currentIndex = (this.currentIndex + 1) % this.phrases.length;
+            delta = 1000; 
         }
-
-        return setTimeout(() => this.tick(), delta);
+        setTimeout(() => this.tick(), delta);
     }
 }
 
 window.onload = function () {
-    const Elements = document.getElementsByClassName('txt-rotate');
-    for (const Element of Elements) {
-        const Bolbal = JSON.parse(Element.getAttribute('data-rotate'));
-        const Times = Element.getAttribute('data-period');
-        if (Bolbal) {
-            new TypedTeks(Element, Bolbal, Times);
+    const elements = document.getElementsByClassName('txt-rotate');
+
+    for (const element of elements) {
+        const phrases = JSON.parse(element.getAttribute('data-rotate'));
+        const periode = element.getAttribute('data-period');
+        if (phrases) {
+            new TypedText(element, phrases, periode);
         }
     }
 
@@ -52,19 +52,20 @@ window.onload = function () {
     document.body.appendChild(css);
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-    const listItems = document.querySelectorAll('.animation');
-    let currentIndex = 0;
 
-    function toggleAnimation() {
-        listItems.forEach(item => {
+document.addEventListener("DOMContentLoaded", function () {
+    const listFooter = document.querySelectorAll('.animasi');
+    let index = 0;
+
+    function toggleAnimasi() {
+        listFooter.forEach(item => {
             item.classList.remove('active');
         });
-        listItems[currentIndex].classList.add('active');
-        currentIndex = (currentIndex + 1) % listItems.length;
+        listFooter[index].classList.add('active');
+        index = (index + 1) % listFooter.length;
     }
 
-    setInterval(toggleAnimation, 1000);
+    setInterval(toggleAnimasi, 1000);
 });
 
 

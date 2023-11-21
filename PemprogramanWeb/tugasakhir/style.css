@@ -101,7 +101,7 @@ main #home h1, main #home p{
 
 main #about img {
     width: 100%;
-    height: 40%;
+    height: 50%;
     margin-top: 20px;
     border-radius: 10px;
     object-fit: cover;
@@ -189,33 +189,32 @@ aside .connect ul li {
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    padding: 10px 0;
+    background-color: #000000;
     margin: 15px 0;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    transition: background-color 0.5s ease-in;
-    /*Mengubahdurasitransisimenjadi0.5detik*/-webkit-transition: background-color 0.5s ease-in;
-    -moz-transition: background-color 0.5s ease-in;
-    -ms-transition: background-color 0.5s ease-in;
-    -o-transition: background-color 0.5s ease-in;
-    -webkit-transition: background-color 0.5s ease-in;
 }
 
-aside .connect ul #instagram {
-    background: linear-gradient(to right bottom, #405de6, #854fd5, #ac40bf, #c731a6, #d7298d, #e5317c, #ee3f6b, #f2505c, #fa6852, #fe804a, #ff9845, #fcaf45);
+aside .connect ul li a{
+    color: #ffffff;
 }
 
-aside .connect ul #github {
-    background: linear-gradient(to right bottom, #000000, #2b2b2b, #525252, #7c7c7c, #aaaaaa, #aaaaaa, #aaaaaa, #aaaaaa, #7c7c7c, #525252, #2b2b2b, #000000);
+aside .connect ul li:hover {
+    transition: 1s;
+    background-color: #ffffff;
+    color: #000000;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
 }
 
-aside .connect ul #linkedin {
-    background: linear-gradient(to right bottom, #0a66c2, #427ecc, #6695d5, #73a1dd, #9dbce2, #aac5e6, #aac5e6, #8bb2e1, #79a5dd, #6695d5, #427ecc, #0a66c2);
+aside .connect ul li a:hover{
+    color: #000000;
+    transition: 1s;
 }
-
-
 
 
 
